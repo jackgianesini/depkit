@@ -23,7 +23,7 @@ To use this package, you must first register your service using the Register fun
 ```go
 package example
 
-import "github.com/lab210-dev/service"
+import "github.com/lab210-dev/servicekit"
 
 type MyService interface {
 	DoSomething()
@@ -36,23 +36,39 @@ func (s *myServiceImpl) DoSomething() {
 }
 
 func init() {
-	service.Register[MyService](new(myServiceImpl))
+	servicekit.Register[MyService](new(myServiceImpl))
 }
 ```
 
 You can now retrieve your service using the `Get` function :
 
 ```go
+package example
+
+import "github.com/lab210-dev/servicekit"
+
+type MyService interface {
+	DoSomething()
+}
+
 func main() {
-    service.Get[MyService]().DoSomething()
+	servicekit.Get[MyService]().DoSomething()
 }
 ```
 
 You can also use the GetAfterRegister function to execute a callback once the service has been registered :
 
 ```go 
+package example
+
+import "github.com/lab210-dev/servicekit"
+
+type MyService interface {
+	DoSomething()
+}
+
 func main() {
-    service.GetAfterRegister[MyService](func(s MyService) {
+    servicekit.GetAfterRegister[MyService](func(s MyService) {
         s.DoSomething()
     })
 }
@@ -60,7 +76,13 @@ func main() {
 
 To reset all registered services, use the Reset function :
 ```go
-service.Reset()
+package example
+
+import "github.com/lab210-dev/servicekit"
+
+func main() {
+	servicekit.Reset()
+}
 ```
 
 ### Notes
@@ -73,7 +95,7 @@ service.Reset()
 ```text
 goos: darwin
 goarch: arm64
-pkg: github.com/lab210-dev/service
+pkg: github.com/lab210-dev/servicekit
 BenchmarkServiceGet
 BenchmarkServiceGet-10                 	 7306159	       162.2 ns/op
 BenchmarkServiceGetAfterRegister
