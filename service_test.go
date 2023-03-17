@@ -1,4 +1,4 @@
-package service
+package servicekit
 
 import (
 	"github.com/stretchr/testify/suite"
