@@ -1,4 +1,4 @@
-[![Go](https://github.com/lab210-dev/service/actions/workflows/coveraage.yml/badge.svg)](https://github.com/lab210-dev/service/actions/workflows/coverage.yml)
+[![Go](https://github.com/lab210-dev/depkit/actions/workflows/coverage.yml/badge.svg)](https://github.com/lab210-dev/depkit/actions/workflows/coverage.yml)
 ![GitHub go.mod Go version](https://img.shields.io/github/go-mod/go-version/lab210-dev/depkit)
 [![Go Report Card](https://goreportcard.com/badge/github.com/lab210-dev/depkit)](https://goreportcard.com/report/github.com/lab210-dev/depkit)
 [![codecov](https://codecov.io/gh/lab210-dev/depkit/branch/main/graph/badge.svg?token=3JRL5ZLSIH)](https://codecov.io/gh/lab210-dev/depkit)
