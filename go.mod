@@ -1,4 +1,4 @@
-module github.com/lab210-dev/servicekit
+module github.com/lab210-dev/depkit
 
 go 1.20
 

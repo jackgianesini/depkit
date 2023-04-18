@@ -1,4 +1,4 @@
-package servicekit
+package depkit
 
 import (
 	"fmt"
@@ -69,8 +69,8 @@ func resolveIdentifier[T any]() string {
 	var t T
 	r := reflect.TypeOf(&t)
 
-	if r.Elem().Kind() != reflect.Interface {
-		log.Panicf("Registered need to be a interface not a '(%s)'", r.Elem().Kind())
+	if r.Elem().Kind() != reflect.Interface && r.Elem().Kind() != reflect.Func {
+		log.Panicf("Registered need to be a interface or Func not a '(%s)'", r.Elem().Kind())
 	}
 
 	return fmt.Sprintf("%s/%s", r.Elem().PkgPath(), r.Elem().Name())

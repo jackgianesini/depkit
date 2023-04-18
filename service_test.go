@@ -1,9 +1,11 @@
-package servicekit
+package depkit
 
 import (
 	"github.com/stretchr/testify/suite"
 	"testing"
 )
+
+type TestInterfaceFunc func(value bool) bool
 
 type TestModuleInterface interface {
 	GetName() string
@@ -77,11 +79,19 @@ func (serviceTest *ServiceTestSuite) TestGetWithError() {
 	serviceTest.Panics(func() { Get[TestModuleInterface]() })
 }
 
+func (serviceTest *ServiceTestSuite) TestRegisterFunc() {
+	Register[TestInterfaceFunc](func(value bool) bool {
+		return true
+	})
+
+	serviceTest.Equal(true, Get[TestInterfaceFunc]()(true))
+}
+
 func TestServiceTestSuite(t *testing.T) {
 	suite.Run(t, new(ServiceTestSuite))
 }
 
-func BenchmarkServiceGet(b *testing.B) {
+func BenchmarkGet(b *testing.B) {
 	Reset()
 
 	Register[TestModuleInterface](&TestModule{})
@@ -93,7 +103,7 @@ func BenchmarkServiceGet(b *testing.B) {
 	}
 }
 
-func BenchmarkServiceGetAfterRegister(b *testing.B) {
+func BenchmarkGetAfterRegister(b *testing.B) {
 	Reset()
 
 	b.ResetTimer()
