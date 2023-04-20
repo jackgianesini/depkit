@@ -1,4 +1,4 @@
-module github.com/lab210-dev/depkit
+module github.com/kitstack/depkit
 
 go 1.20
 

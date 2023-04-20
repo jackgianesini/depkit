@@ -1,9 +1,9 @@
-[![Go](https://github.com/lab210-dev/depkit/actions/workflows/coverage.yml/badge.svg)](https://github.com/lab210-dev/depkit/actions/workflows/coverage.yml)
-![GitHub go.mod Go version](https://img.shields.io/github/go-mod/go-version/lab210-dev/depkit)
-[![Go Report Card](https://goreportcard.com/badge/github.com/lab210-dev/depkit)](https://goreportcard.com/report/github.com/lab210-dev/depkit)
-[![codecov](https://codecov.io/gh/lab210-dev/depkit/branch/main/graph/badge.svg?token=3JRL5ZLSIH)](https://codecov.io/gh/lab210-dev/depkit)
-[![License](https://img.shields.io/badge/license-MIT-blue.svg)](https://github.com/lab210-dev/depkit/blob/main/LICENSE)
-[![Github tag](https://badgen.net/github/release/lab210-dev/depkit)](https://github.com/lab210-dev/depkit/releases)
+[![Go](https://github.com/kitstack/depkit/actions/workflows/coverage.yml/badge.svg)](https://github.com/kitstack/depkit/actions/workflows/coverage.yml)
+![GitHub go.mod Go version](https://img.shields.io/github/go-mod/go-version/kitstack/depkit)
+[![Go Report Card](https://goreportcard.com/badge/github.com/kitstack/depkit)](https://goreportcard.com/report/github.com/kitstack/depkit)
+[![codecov](https://codecov.io/gh/kitstack/depkit/branch/main/graph/badge.svg?token=3JRL5ZLSIH)](https://codecov.io/gh/kitstack/depkit)
+[![License](https://img.shields.io/badge/license-MIT-blue.svg)](https://github.com/kitstack/depkit/blob/main/LICENSE)
+[![Github tag](https://badgen.net/github/release/kitstack/depkit)](https://github.com/kitstack/depkit/releases)
 
 # Overview
 This package provides a simple way to manage dependencies in a Go application. It allows you to register and retrieve dependencies using Go interfaces.
@@ -14,7 +14,7 @@ It simplifies the process of writing unit tests by providing a simple and easy-t
 To install this package, use the `go get` command:
 
 ```bash
-go get github.com/lab210-dev/depkit
+go get github.com/kitstack/depkit
 ```
 
 ## 📚 Usage
@@ -23,7 +23,7 @@ To use this package, you must first register your dependency using the Register 
 ```go
 package example
 
-import "github.com/lab210-dev/depkit"
+import "github.com/kitstack/depkit"
 
 type MyService interface {
 	DoSomething()
@@ -45,7 +45,7 @@ You can now retrieve your service using the `Get` function :
 ```go
 package example
 
-import "github.com/lab210-dev/depkit"
+import "github.com/kitstack/depkit"
 
 type MyService interface {
 	DoSomething()
@@ -61,7 +61,7 @@ You can also use the GetAfterRegister function to execute a callback once the se
 ```go 
 package example
 
-import "github.com/lab210-dev/depkit"
+import "github.com/kitstack/depkit"
 
 type MyService interface {
 	DoSomething()
@@ -78,7 +78,7 @@ To reset all registered dependencies, use the Reset function :
 ```go
 package example
 
-import "github.com/lab210-dev/depkit"
+import "github.com/kitstack/depkit"
 
 func main() {
 	depkit.Reset()
@@ -94,7 +94,7 @@ func main() {
 ```text
 goos: darwin
 goarch: arm64
-pkg: github.com/lab210-dev/depkit
+pkg: github.com/kitstack/depkit
 BenchmarkGet
 BenchmarkGet-10                 	 6689894	       167.8 ns/op
 BenchmarkGetAfterRegister
