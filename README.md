@@ -96,9 +96,11 @@ goos: darwin
 goarch: arm64
 pkg: github.com/kitstack/depkit
 BenchmarkGet
-BenchmarkGet-10                 	 6689894	       167.8 ns/op
+BenchmarkGet-10                 	 6982549	       170.8 ns/op
+BenchmarkRegister
+BenchmarkRegister-10            	 7061115	       164.9 ns/op
 BenchmarkGetAfterRegister
-BenchmarkGetAfterRegister-10    	 5415369	       223.7 ns/op
+BenchmarkGetAfterRegister-10    	 5401953	       223.9 ns/op
 ```
 
 ## 🤝 Contributions
